@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="count">
+			<state id="off_nominal" />
+			<state id="degraded" />
+			<state id="min_crew" />
+			<state id="nominal" />
+			<pointvalues>1 2 3 4</pointvalues>
+			<probabilities>0.1 0.1 0.1 0.7</probabilities>
+		</cpt>
+		<cpt id="activity">
+			<state id="nominal" />
+			<state id="experiment" />
+			<state id="sport" />
+			<probabilities>0.8 0.1 0.1</probabilities>
+		</cpt>
+		<cpt id="crew">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>count activity</parents>
+			<probabilities>0.15 0.85 0.3 0.7 0.2 0.8 0.25 0.75 0.2 0.8 0.15 0.85 0.5 0.5 0.5 0.5 0.4 0.6 0.99 0.01 0.9 0.1 0.6 0.4</probabilities>
+		</cpt>
+		<cpt id="crew_size">
+			<state id="One" />
+			<state id="Two" />
+			<state id="Three" />
+			<state id="Four" />
+			<pointvalues>1 2 3 4</pointvalues>
+			<parents>count</parents>
+			<probabilities>0.5 0.5 0 0 0 1 0 0 0 0 1 0 0 0 0 1</probabilities>
+		</cpt>
+		<cpt id="metabolic_profile">
+			<state id="short" />
+			<state id="long" />
+			<intervals>0 30 inf</intervals>
+			<parents>activity</parents>
+			<probabilities>0.2 0.8 0.8 0.2 0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="metabolic_rate">
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<state id="very_high" />
+			<pointvalues>1 2 3 4</pointvalues>
+			<parents>activity</parents>
+			<probabilities>0.8 0.1 0.05 0.05 0.1 0.4 0.4 0.1 0.05 0.15 0.4 0.4</probabilities>
+		</cpt>
+		<cpt id="structure">
+			<state id="nominal" />
+			<state id="degraded" />
+			<state id="off_nominal" />
+			<probabilities>0.9 0.05 0.05</probabilities>
+		</cpt>
+		<cpt id="meteorite_impact_a">
+			<state id="None" />
+			<state id="Small" />
+			<state id="Medium" />
+			<pointvalues>0 5 0</pointvalues>
+			<parents>structure</parents>
+			<probabilities>0.9 0.09999999999999998 0 0.2 0.8 0 0.09999999999999998 0.09999999999999998 0.8</probabilities>
+		</cpt>
+		<cpt id="meteorite_impact_b">
+			<state id="False" />
+			<state id="True" />
+			<parents>structure</parents>
+			<probabilities>0.95 0.05 0.8 0.2 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="insulation_loss">
+			<state id="very_high" />
+			<state id="high" />
+			<state id="small" />
+			<state id="very_small" />
+			<intervals>-4330 -3000 -2000 -1000 0</intervals>
+			<parents>structure</parents>
+			<probabilities>0.05 0.05 0.05 0.85 0.1 0.4 0.3 0.2 0.8 0.1 0.05 0.05</probabilities>
+		</cpt>
+		<cpt id="airlock_failure">
+			<state id="False" />
+			<state id="True" />
+			<pointvalues>0 1</pointvalues>
+			<parents>structure</parents>
+			<probabilities>0.95 0.05 0.8 0.2 0.4 0.6</probabilities>
+		</cpt>
+		<cpt id="pipe">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="vacuum_severity">
+			<state id="very_low" />
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<state id="very_high" />
+			<intervals>606 700 800 900 1000 1156</intervals>
+			<parents>pipe</parents>
+			<probabilities>0.3 0.3 0.2 0.1 0.1 0.1 0.1 0.2 0.3 0.3</probabilities>
+		</cpt>
+		<cpt id="vacuum_fault">
+			<state id="nominal" />
+			<state id="high_vaccuum" />
+			<intervals>10 45 80</intervals>
+			<parents>pipe</parents>
+			<probabilities>0.8 0.2 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="flow_rate_a">
+			<state id="off_down" />
+			<state id="degraded_down" />
+			<state id="nominal" />
+			<state id="degraded_up" />
+			<state id="off_up" />
+			<intervals>0 2 4 6 8 10</intervals>
+			<parents>pipe</parents>
+			<probabilities>0.025 0.025 0.9 0.025 0.025 0.15 0.3 0.1 0.3 0.15</probabilities>
+		</cpt>
+		<cpt id="flow_rate_b">
+			<state id="off_down" />
+			<state id="degraded_down" />
+			<state id="nominal" />
+			<state id="degraded_up" />
+			<state id="off_up" />
+			<intervals>20 22 24 26 28 30</intervals>
+			<parents>pipe</parents>
+			<probabilities>0.025 0.025 0.9 0.025 0.025 0.5 0.2 0.1 0.1 0.1</probabilities>
+		</cpt>
+		<cpt id="filter">
+			<state id="nominal" />
+			<state id="clogged" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="mesh_size">
+			<state id="clogged" />
+			<state id="light_clogging" />
+			<state id="degraded" />
+			<state id="nominal" />
+			<intervals>2 15 30 45 60</intervals>
+			<parents>filter</parents>
+			<probabilities>0 0 0.01 0.99 0.2 0.4 0.2 0.2</probabilities>
+		</cpt>
+		<cpt id="filter_clog_fault">
+			<state id="nominal" />
+			<state id="clogged" />
+			<pointvalues>1000 1e-05</pointvalues>
+			<parents>filter</parents>
+			<probabilities>0.8 0.2 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="lstm_param_filter">
+			<state id="Mok" />
+			<state id="Mko" />
+			<parents>filter</parents>
+			<probabilities>0.8 0.2 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="screen_blinding">
+			<state id="nominal" />
+			<state id="degraded" />
+			<state id="faulty" />
+			<pointvalues>0 5000 10000</pointvalues>
+			<parents>filter</parents>
+			<probabilities>0.9 0.05 0.05 0.1 0.3 0.6</probabilities>
+		</cpt>
+		<cpt id="valve">
+			<state id="nominal" />
+			<state id="half_stiction" />
+			<state id="full_stiction" />
+			<probabilities>0.9 0.05 0.05</probabilities>
+		</cpt>
+		<cpt id="leak_severity">
+			<state id="low" />
+			<state id="high" />
+			<intervals>4.8e-10 1e-09 1e-08</intervals>
+			<parents>valve</parents>
+			<probabilities>0.8 0.2 0.5 0.5 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="leak_fault">
+			<state id="degraded" />
+			<state id="off_nominal" />
+			<intervals>4.8e-10 1e-09 1e-08</intervals>
+			<parents>valve</parents>
+			<probabilities>0.8 0.2 0.5 0.5 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="valve_severity">
+			<state id="low" />
+			<state id="high" />
+			<intervals>3e-07 22 45</intervals>
+			<parents>valve</parents>
+			<probabilities>0.9 0.1 0.5 0.5 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="valve_fault">
+			<state id="nominal" />
+			<state id="stiction" />
+			<pointvalues>1000 1e-05</pointvalues>
+			<parents>valve</parents>
+			<probabilities>0.9 0.1 0.5 0.5 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="size">
+			<state id="nominal" />
+			<state id="long" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="water">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="bed">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>size water</parents>
+			<probabilities>0.9 0.1 0.1 0.9 0.8 0.2 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="bed_length_a">
+			<state id="short" />
+			<state id="long" />
+			<intervals>15 20 25</intervals>
+			<parents>size</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="bed_length_b">
+			<state id="short" />
+			<state id="long" />
+			<pointvalues>0.165 0.254</pointvalues>
+			<parents>size</parents>
+			<probabilities>1 0 0 1</probabilities>
+		</cpt>
+		<cpt id="pellet_bed_ratio">
+			<state id="r_42to94" />
+			<state id="r_24to48" />
+			<parents>size</parents>
+			<probabilities>0.2 0.8 0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="water_preload">
+			<state id="nominal" />
+			<state id="preloaded" />
+			<pointvalues>0 0.001</pointvalues>
+			<parents>water</parents>
+			<probabilities>0.95 0.05 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="system_leak">
+			<state id="nominal" />
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<pointvalues>0 0.1 1 2</pointvalues>
+			<parents>water</parents>
+			<probabilities>0.6 0.2 0.1 0.1 0.1 0.1 0.1 0.7</probabilities>
+		</cpt>
+		<cpt id="heater">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="heater_failure">
+			<state id="nominal" />
+			<state id="low" />
+			<state id="medium" />
+			<state id="high" />
+			<pointvalues>0 1 2 3</pointvalues>
+			<parents>heater</parents>
+			<probabilities>0.9 0.05 0.05 0 0 0.05 0.05 0.9</probabilities>
+		</cpt>
+		<cpt id="heater_fault_a">
+			<state id="low_temp" />
+			<state id="nominal_temp" />
+			<intervals>450 475 498</intervals>
+			<parents>heater</parents>
+			<probabilities>0.2 0.8 0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="CDRS">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>pipe filter valve bed heater</parents>
+			<probabilities>0.99 0.01 0.9 0.09999999999999998 0.8 0.2 0.7 0.3 0.9 0.09999999999999998 0.8 0.2 0.7 0.3 0.6 0.4 0.8 0.2 0.7 0.3 0.7 0.3 0.6 0.4 0.7 0.3 0.6 0.4 0.6 0.4 0.5 0.5 0.6 0.4 0.5 0.5 0.4 0.6 0.3 0.7 0.5 0.5 0.4 0.6 0.3 0.7 0.2 0.8 0.9 0.09999999999999998 0.8 0.2 0.8 0.2 0.7 0.3 0.8 0.2 0.7 0.3 0.6 0.4 0.5 0.5 0.7 0.3 0.6 0.4 0.5 0.5 0.4 0.6 0.4 0.6 0.3 0.7 0.2 0.8 0.1 0.9 0.3 0.7 0.2 0.8 0.1 0.9 0.1 0.9 0.3 0.7 0.2 0.8 0.1 0.9 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="ACV">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="OGA">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.9 0.1</probabilities>
+		</cpt>
+		<cpt id="FDS">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="WPA">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="inlet">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.999 0.001</probabilities>
+		</cpt>
+		<cpt id="air_heater">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="evaporator">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.95 0.05</probabilities>
+		</cpt>
+		<cpt id="compressor">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<probabilities>0.99 0.01</probabilities>
+		</cpt>
+		<cpt id="THCS">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>inlet air_heater evaporator compressor</parents>
+			<probabilities>0.9 0.09999999999999998 0.8 0.2 0.8 0.2 0.7 0.3 0.8 0.2 0.7 0.3 0.7 0.3 0.6 0.4 0.5 0.5 0.4 0.6 0.4 0.6 0.3 0.7 0.4 0.6 0.2 0.8 0.2 0.8 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="ECLSS">
+			<state id="nominal" />
+			<state id="degraded" />
+			<state id="off_nominal" />
+			<parents>CDRS ACV OGA FDS WPA THCS</parents>
+			<probabilities>0.99 0.01 0 0.9 0.05 0.04999999999999998 0.9 0.05 0.04999999999999998 0.8 0.1 0.09999999999999995 0.9 0.05 0.04999999999999998 0.8 0.1 0.09999999999999995 0.8 0.1 0.09999999999999995 0.7 0.2 0.1 0.8 0.1 0.09999999999999995 0.7 0.2 0.1 0.7 0.2 0.1 0.6 0.3 0.1 0.7 0.2 0.1 0.6 0.3 0.1 0.6 0.3 0.1 0.5 0.25 0.25 0.6 0.2 0.2 0.5 0.4 0.09999999999999998 0.5 0.4 0.09999999999999998 0.4 0.5 0.09999999999999998 0.5 0.3 0.2 0.4 0.3 0.3 0.4 0.3 0.3 0.3 0.6 0.09999999999999998 0.4 0.5 0.09999999999999998 0.3 0.5 0.2 0.3 0.6 0.09999999999999998 0.2 0.7 0.1000000000000001 0.4 0.5 0.09999999999999998 0.2 0.5 0.3 0.2 0.7 0.1000000000000001 0.1 0.8 0.09999999999999998 0.9 0.05 0.04999999999999998 0.8 0.1 0.09999999999999995 0.8 0.1 0.09999999999999995 0.7 0.2 0.1 0.9 0.05 0.04999999999999998 0.8 0.1 0.09999999999999995 0.8 0.1 0.09999999999999995 0.6 0.2 0.2 0.8 0.1 0.09999999999999995 0.7 0.2 0.1 0.7 0.2 0.1 0.6 0.3 0.1 0.7 0.2 0.1 0.6 0.3 0.1 0.6 0.3 0.1 0.5 0.2 0.3 0.4 0.3 0.3 0.3 0.6 0.09999999999999998 0.3 0.6 0.09999999999999998 0.2 0.5 0.3 0.4 0.5 0.09999999999999998 0.2 0.7 0.1000000000000001 0.2 0.7 0.1000000000000001 0.1 0.8 0.09999999999999998 0.3 0.6 0.09999999999999998 0.2 0.5 0.3 0.2 0.5 0.3 0.1 0.6 0.3 0.2 0.2 0.6000000000000001 0.1 0.1 0.8 0.1 0.1 0.8 0.05 0.05 0.8999999999999999</probabilities>
+		</cpt>
+		<cpt id="co2_scrub_fault">
+			<state id="False" />
+			<state id="True" />
+			<parents>ECLSS</parents>
+			<probabilities>0.9 0.1 0.5 0.5 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="half_cycle_time">
+			<state id="very_short" />
+			<state id="short" />
+			<state id="long" />
+			<state id="very_long" />
+			<intervals>60 85 100 125 150</intervals>
+			<parents>ECLSS</parents>
+			<probabilities>0.5 0.5 0 0 0.5 0.5 0 0 0.25 0.25 0.25 0.25</probabilities>
+		</cpt>
+		<cpt id="diffuser">
+			<state id="forward" />
+			<state id="aft" />
+			<parents>ACV</parents>
+			<probabilities>0.2 0.8 0.8 0.2</probabilities>
+		</cpt>
+		<cpt id="airflow_rate">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<pointvalues>68 102</pointvalues>
+			<parents>ACV</parents>
+			<probabilities>0.8 0.2 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="fan">
+			<state id="with" />
+			<state id="without" />
+			<parents>ACV</parents>
+			<probabilities>0.9 0.1 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="oxygen_fault">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>OGA</parents>
+			<probabilities>0.9 0.1 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="fire">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<intervals>0 1250 2500</intervals>
+			<parents>FDS</parents>
+			<probabilities>0.8 0.2 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="water_fault">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>WPA</parents>
+			<probabilities>0.9 0.1 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="inlet_humidity">
+			<state id="too_dry" />
+			<state id="nominal" />
+			<state id="too_humid" />
+			<intervals>0 25 75 100</intervals>
+			<parents>inlet</parents>
+			<probabilities>0.1 0.8 0.1 0.4 0.2 0.4</probabilities>
+		</cpt>
+		<cpt id="inlet_temperature">
+			<state id="nominal" />
+			<state id="degraded" />
+			<state id="high" />
+			<state id="very_high" />
+			<pointvalues>24 38 49 60</pointvalues>
+			<parents>inlet</parents>
+			<probabilities>0.9 0.1 0 0 0.1 0.4 0.4 0.1</probabilities>
+		</cpt>
+		<cpt id="heater_fault_b">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>air_heater</parents>
+			<probabilities>0.8 0.2 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="evaporator_fault">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>evaporator</parents>
+			<probabilities>0.8 0.2 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="compressor_fault">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>compressor</parents>
+			<probabilities>0.9 0.1 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="humidity_fault">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>THCS</parents>
+			<probabilities>0.8 0.2 0.2 0.8</probabilities>
+		</cpt>
+		<cpt id="PPE">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>ECLSS</parents>
+			<probabilities>0.85 0.15 0.5 0.5 0.15 0.85</probabilities>
+		</cpt>
+		<cpt id="IHAB">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>ECLSS</parents>
+			<probabilities>0.9 0.1 0.5 0.5 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="ihab_config">
+			<state id="config1" />
+			<state id="config2" />
+			<parents>IHAB</parents>
+			<probabilities>0.9 0.1 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="HALO">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>ECLSS</parents>
+			<probabilities>0.9 0.1 0.6 0.4 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="halo_config">
+			<state id="config1" />
+			<state id="config2" />
+			<parents>HALO</parents>
+			<probabilities>0.9 0.1 0.1 0.9</probabilities>
+		</cpt>
+		<cpt id="module">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>structure PPE IHAB HALO</parents>
+			<probabilities>0.95 0.05000000000000004 0.9 0.09999999999999998 0.8 0.2 0.8 0.2 0.7 0.3 0.6 0.4 0.6 0.4 0.5 0.5 0.6 0.4 0.6 0.4 0.6 0.4 0.4 0.6 0.5 0.5 0.3 0.7 0.3 0.7 0.2 0.8 0.3 0.7 0.2 0.8 0.2 0.8 0.1 0.9 0.2 0.8 0.1 0.9 0.1 0.9 0.05 0.95</probabilities>
+		</cpt>
+		<cpt id="GATEWAY">
+			<state id="nominal" />
+			<state id="off_nominal" />
+			<parents>crew module</parents>
+			<probabilities>0.9 0.1 0.5 0.5 0.4 0.6 0.1 0.9</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.1.3724.0 ACADEMIC" name="Network1">
+			<node id="GATEWAY">
+				<name>GATEWAY</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>108 223 187 259</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="crew">
+				<name>crew</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>202 101 247 129</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="module">
+				<name>module</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>199 533 250 564</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="structure">
+				<name>structure</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>352 410 423 434</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="PPE">
+				<name>PPE</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>367 488 407 513</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="IHAB">
+				<name>IHAB</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>366 575 409 601</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="HALO">
+				<name>HALO</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>364 634 410 662</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="ECLSS">
+				<name>ECLSS</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>423 1090 472 1120</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="CDRS">
+				<name>CDRS</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>615 1323 661 1351</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="ACV">
+				<name>ACV</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>617 2318 659 2344</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="OGA">
+				<name>OGA</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>617 2435 660 2461</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="FDS">
+				<name>FDS</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>618 2494 659 2519</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="WPA">
+				<name>WPA</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>617 2551 660 2577</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="THCS">
+				<name>THCS</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>616 2726 661 2754</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="pipe">
+				<name>pipe</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>813 1008 854 1033</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="filter">
+				<name>filter</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>812 1384 854 1410</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="valve">
+				<name>valve</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>810 1624 856 1652</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="bed">
+				<name>bed</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>767 1912 807 1937</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="heater">
+				<name>heater</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>809 2148 858 2178</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="inlet">
+				<name>inlet</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>813 2731 853 2755</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="air_heater">
+				<name>air_heater</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>794 2842 873 2866</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="evaporator">
+				<name>evaporator</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>792 2904 875 2928</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="compressor">
+				<name>compressor</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>790 2965 877 2989</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="crew_size">
+				<name>crew_size</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>943 45 1075 69</position>
+				<barchart active="true" width="128" height="90" />
+			</node>
+			<node id="metabolic_profile">
+				<name>metabolic_profile</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 121 1074 147</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="metabolic_rate">
+				<name>metabolic_rate</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 198 1074 224</position>
+				<barchart active="true" width="128" height="90" />
+			</node>
+			<node id="meteorite_impact_a">
+				<name>meteorite_impact_a</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>945 285 1074 311</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="meteorite_impact_b">
+				<name>meteorite_impact_b</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 353 1074 379</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="insulation_loss">
+				<name>insulation_loss</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 430 1074 456</position>
+				<barchart active="true" width="128" height="90" />
+			</node>
+			<node id="airlock_failure">
+				<name>airlock_failure</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 512 1074 538</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="ihab_config">
+				<name>ihab_config</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 576 1074 602</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="halo_config">
+				<name>halo_config</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 635 1074 661</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="co2_scrub_fault">
+				<name>co2_scrub_fault</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 694 1074 720</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="half_cycle_time">
+				<name>half_cycle_time</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 771 1074 797</position>
+				<barchart active="true" width="128" height="90" />
+			</node>
+			<node id="vacuum_severity">
+				<name>vacuum_severity</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 875 1074 901</position>
+				<barchart active="true" width="128" height="108" />
+			</node>
+			<node id="vacuum_fault">
+				<name>vacuum_fault</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 960 1074 986</position>
+				<barchart active="true" width="129" height="54" />
+			</node>
+			<node id="flow_rate_a">
+				<name>flow_rate_a</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1046 1074 1072</position>
+				<barchart active="true" width="128" height="108" />
+			</node>
+			<node id="flow_rate_b">
+				<name>flow_rate_b</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1159 1074 1185</position>
+				<barchart active="true" width="128" height="108" />
+			</node>
+			<node id="mesh_size">
+				<name>mesh_size</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1264 1074 1290</position>
+				<barchart active="true" width="128" height="90" />
+			</node>
+			<node id="filter_clog_fault">
+				<name>filter_clog_fault</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1341 1074 1367</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="lstm_param_filter">
+				<name>lstm_param_filter</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1400 1074 1426</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="screen_blinding">
+				<name>screen_blinding</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1468 1074 1494</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="leak_severity">
+				<name>leak_severity</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1536 1074 1562</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="leak_fault">
+				<name>leak_fault</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1595 1074 1621</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="valve_severity">
+				<name>valve_severity</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1654 1074 1680</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="valve_fault">
+				<name>valve_fault</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1713 1074 1739</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="bed_length_a">
+				<name>bed_length_a</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1772 1074 1798</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="bed_length_b">
+				<name>bed_length_b</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1831 1074 1857</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="pellet_bed_ratio">
+				<name>pellet_bed_ratio</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1890 1074 1916</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="water_preload">
+				<name>water_preload</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 1949 1074 1975</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="system_leak">
+				<name>system_leak</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2027 1074 2053</position>
+				<barchart active="true" width="128" height="90" />
+			</node>
+			<node id="heater_failure">
+				<name>heater_failure</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2122 1074 2148</position>
+				<barchart active="true" width="128" height="90" />
+			</node>
+			<node id="heater_fault_a">
+				<name>heater_fault_a</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2199 1074 2225</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="diffuser">
+				<name>diffuser</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2258 1074 2284</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="airflow_rate">
+				<name>airflow_rate</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2317 1074 2343</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="fan">
+				<name>fan</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2376 1074 2402</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="oxygen_fault">
+				<name>oxygen_fault</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2435 1074 2461</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="fire">
+				<name>fire</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2494 1074 2520</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="water_fault">
+				<name>water_fault</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2553 1074 2579</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="humidity_fault">
+				<name>humidity_fault</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2612 1074 2638</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="inlet_humidity">
+				<name>inlet_humidity</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2680 1074 2706</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="inlet_temperature">
+				<name>inlet_temperature</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2767 1074 2793</position>
+				<barchart active="true" width="128" height="90" />
+			</node>
+			<node id="heater_fault_b">
+				<name>heater_fault_b</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2844 1074 2870</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="evaporator_fault">
+				<name>evaporator_fault</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2902 1074 2928</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="compressor_fault">
+				<name>compressor_fault</name>
+				<interior color="e2f0d9" />
+				<outline color="385723" />
+				<font color="385723" name="Arial" size="8" />
+				<position>944 2961 1074 2987</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+			<node id="count">
+				<name>count</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>358 45 417 73</position>
+				<barchart active="true" width="128" height="90" />
+			</node>
+			<node id="activity">
+				<name>activity</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>358 157 417 185</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="water">
+				<name>water</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>807 1995 859 2020</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="size">
+				<name>size</name>
+				<interior color="dae3f3" />
+				<outline color="203864" />
+				<font color="203864" name="Arial" size="8" />
+				<position>807 1828 859 1853</position>
+				<barchart active="true" width="128" height="54" />
+			</node>
+		</genie>
+	</extensions>
+</smile>

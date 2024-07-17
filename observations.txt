@@ -1,0 +1,2 @@
+count activity crew structure pipe filter valve size water bed heater CDRS ACV OGA FDS WPA inlet air_heater evaporator compressor THCS ECLSS PPE IHAB HALO module GATEWAY
+nominal nominal off_nominal nominal nominal nominal nominal long nominal nominal nominal nominal nominal nominal nominal nominal nominal nominal nominal nominal nominal degraded nominal off_nominal nominal off_nominal nominal
